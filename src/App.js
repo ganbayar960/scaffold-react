@@ -1,9 +1,31 @@
 import React from "react";
-import Layout from "./layouts/Layouts/Master"
-import "./App.css"
+import Layout from "./layouts/Layouts/Master";
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import Home from "./pages/Homepage";
+import About from "./pages/About";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+import Notfound from "./pages/Notfound";
+import "./App.css";
 function App() {
   return (
-    <Layout />
+    <Router>
+      <Layout />
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+        <Route exact path="/about" component={About}></Route>
+        <Route exact path="/blog" component={Blog}></Route>
+        <Route exact path="/contact" component={Contact}></Route>
+        <Route render={Notfound}></Route>
+      </Switch>
+    </Router>
+    
+    
   );
 }
 
