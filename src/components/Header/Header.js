@@ -15,7 +15,7 @@ class Header extends Component {
     render (){
         return (
             <nav className="navBarItems">
-                <h1 className="navbar-logo">Scaffold<i className="fab fa-react"></i></h1>
+                <Link to="/" style={{textDecoration : "none"}}><h1 className="navbar-logo">Scaffold<i className="fab fa-react"></i></h1></Link>
                 <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' :  'fas fa-bars'}></i>
                 </div>
